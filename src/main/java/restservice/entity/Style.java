@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity(name = "styles")
 @NoArgsConstructor
@@ -18,6 +17,4 @@ public class Style {
     @Column(name = "Style_id")
     private Long styleId;
     private String name;
-    @OneToMany(mappedBy = "style")
-    private Set<ArtWork> artWorks;
 }

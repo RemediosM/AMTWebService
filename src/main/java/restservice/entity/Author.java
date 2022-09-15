@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity(name = "authors")
 @NoArgsConstructor
@@ -20,6 +19,4 @@ public class Author {
     @Column(name = "First_name")
     private String firstName;
     private String surname;
-    @OneToMany(mappedBy = "author")
-    private Set<ArtWork> artWorks;
 }

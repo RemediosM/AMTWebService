@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity(name = "cities")
 @NoArgsConstructor
@@ -22,7 +21,4 @@ public class City {
     @ManyToOne
     @JoinColumn(name="Country_id", nullable=false)
     private Country country;
-
-    @OneToMany(mappedBy = "city")
-    private Set<Address> addresses;
 }

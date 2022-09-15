@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity(name = "countries")
 @NoArgsConstructor
@@ -18,6 +17,4 @@ public class Country {
     private Long countryId;
     private String name;
 
-    @OneToMany(mappedBy = "country")
-    private Set<City> cities;
 }
