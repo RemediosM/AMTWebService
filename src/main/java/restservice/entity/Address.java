@@ -1,13 +1,16 @@
 package restservice.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import restservice.dto.AddressDto;
 
 import javax.persistence.*;
 
 @Entity(name = "addresses")
 @NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
 public class Address {
@@ -21,6 +24,10 @@ public class Address {
     @ManyToOne
     @JoinColumn(name="City_id", nullable=false)
     private City city;
+
+    public AddressDto toDto() {
+        return new AddressDto(addressId, street, coordinates, city.toDto());
+    }
 
     @Override
     public String toString() {

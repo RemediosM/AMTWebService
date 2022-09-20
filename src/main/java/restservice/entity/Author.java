@@ -19,4 +19,5 @@ public class Author {
     @Column(name = "First_name")
     private String firstName;
     private String surname;
+    private String biography;
 }

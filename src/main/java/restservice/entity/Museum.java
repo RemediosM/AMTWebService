@@ -17,6 +17,8 @@ public class Museum {
     @Column(name = "Museum_id")
     private long museumId;
     private String name;
+    @Column(name = "Url_address")
+    private String urlAddress;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="Address_id", nullable=false)
     private Address address;
